@@ -1,21 +1,10 @@
 const calculate = (arr) => {
-  const filteredArr = []
+  const forCalculation = cleanCalculateInput(arr)
+  const n1 = Number(forCalculation[0])
+  const n2 = Number(forCalculation[2])
+  const operator = forCalculation[1]
 
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === null) {
-      arr[i] = 0
-      filteredArr.push(arr[i])
-    } else if (arr[i] !== '' && arr[i] !== undefined) {
-      filteredArr.push(arr[i])
-    }
-  }
-
-  if (filteredArr.length < 3) { return NaN }
-
-  const n1 = Number(filteredArr[0])
-  const n2 = Number(filteredArr[2])
-
-  switch (filteredArr[1]) {
+  switch (operator) {
     case '+':
       return n1 + n2
     case '-':
@@ -27,6 +16,21 @@ const calculate = (arr) => {
     default:
       return NaN
   }
+}
+
+const cleanCalculateInput = (arr) => {
+  const validForCalculate = []
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === null) {
+      arr[i] = 0
+      validForCalculate.push(arr[i])
+    } else if (arr[i] !== '' && arr[i] !== undefined) {
+      validForCalculate.push(arr[i])
+    }
+  }
+
+  return validForCalculate
 }
 
 module.exports = calculate
