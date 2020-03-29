@@ -25,7 +25,7 @@ const cleanCalculateInput = (arr) => {
     if (arr[i] === null) {
       arr[i] = 0
       validForCalculate.push(arr[i])
-    } else if (arr[i] !== '' && arr[i] !== undefined) {
+    } else if (arr[i]) {
       validForCalculate.push(arr[i])
     }
   }
