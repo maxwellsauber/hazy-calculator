@@ -1,8 +1,8 @@
 const calculate = (arr) => {
-  const forCalculation = cleanCalculateInput(arr)
-  const n1 = Number(forCalculation[0])
-  const n2 = Number(forCalculation[2])
-  const operator = forCalculation[1]
+  const calculationData = sanitiezeCalculateArr(arr)
+  const n1 = Number(calculationData[0])
+  const n2 = Number(calculationData[2])
+  const operator = calculationData[1]
 
   switch (operator) {
     case '+':
@@ -18,7 +18,7 @@ const calculate = (arr) => {
   }
 }
 
-const cleanCalculateInput = (arr) => {
+const sanitiezeCalculateArr = (arr) => {
   const validForCalculate = []
 
   for (let i = 0; i < arr.length; i++) {
