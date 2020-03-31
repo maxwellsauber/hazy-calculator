@@ -23,8 +23,7 @@ const sanitizeCalculationData = (arr) => {
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === null) {
-      arr[i] = 0
-      validForCalculation.push(arr[i])
+      validForCalculation.push(0)
     } else if (arr[i]) {
       validForCalculation.push(arr[i])
     }
