@@ -5,16 +5,11 @@ const calculate = (arr) => {
   const operator = calculationData[1]
 
   switch (operator) {
-    case '+':
-      return n1 + n2
-    case '-':
-      return n1 - n2
-    case '*':
-      return n1 * n2
-    case '/':
-      return n1 / n2
-    default:
-      return NaN
+    case '+': return n1 + n2
+    case '-': return n1 - n2
+    case '*': return n1 * n2
+    case '/': return n1 / n2
+    default: return NaN
   }
 }
 
