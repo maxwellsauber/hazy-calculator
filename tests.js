@@ -26,5 +26,4 @@ describe('HazyCalculator', () => {
 
     expect(calculate(calculationSteps)).to.be.NaN
   })
-
 })
