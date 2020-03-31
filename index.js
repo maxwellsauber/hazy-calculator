@@ -4,8 +4,6 @@ const calculate = (arr) => {
   const n2 = calculationData[2]
   const operator = calculationData[1]
 
-  if (calculationData.length !== 3) { return NaN }
-
   switch (operator) {
     case '+': return n1 + n2
     case '-': return n1 - n2
@@ -25,7 +23,8 @@ const sanitizeCalculationData = (arr) => {
     if (arr[i] === null) { forCalculation.push(0) }
   }
 
-  return forCalculation
+  return forCalculation.length === 3 ? forCalculation : NaN
+
 }
 
 module.exports = calculate
