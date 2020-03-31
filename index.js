@@ -1,5 +1,5 @@
 const calculate = (arr) => {
-  const calculationData = sanitiezeCalculateArr(arr)
+  const calculationData = sanitiezeCalculateData(arr)
   const n1 = Number(calculationData[0])
   const n2 = Number(calculationData[2])
   const operator = calculationData[1]
@@ -18,7 +18,7 @@ const calculate = (arr) => {
   }
 }
 
-const sanitiezeCalculateArr = (arr) => {
+const sanitiezeCalculateData = (arr) => {
   const validForCalculate = []
 
   for (let i = 0; i < arr.length; i++) {
