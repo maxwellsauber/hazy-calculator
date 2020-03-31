@@ -1,5 +1,5 @@
 const calculate = (arr) => {
-  const calculationData = sanitiezeCalculateData(arr)
+  const calculationData = sanitiezeCalculationData(arr)
   const n1 = Number(calculationData[0])
   const n2 = Number(calculationData[2])
   const operator = calculationData[1]
@@ -18,19 +18,19 @@ const calculate = (arr) => {
   }
 }
 
-const sanitiezeCalculateData = (arr) => {
-  const validForCalculate = []
+const sanitiezeCalculationData = (arr) => {
+  const validForCalculation = []
 
   for (let i = 0; i < arr.length; i++) {
     if (arr[i] === null) {
       arr[i] = 0
-      validForCalculate.push(arr[i])
+      validForCalculation.push(arr[i])
     } else if (arr[i]) {
-      validForCalculate.push(arr[i])
+      validForCalculation.push(arr[i])
     }
   }
 
-  return validForCalculate
+  return validForCalculation
 }
 
 module.exports = calculate
