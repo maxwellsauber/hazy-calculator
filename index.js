@@ -4,6 +4,8 @@ const calculate = (arr) => {
   const n2 = calculationData[2]
   const operator = calculationData[1]
 
+  if (calculationData.length !== 3) { return NaN }
+
   switch (operator) {
     case '+': return n1 + n2
     case '-': return n1 - n2
@@ -14,14 +16,16 @@ const calculate = (arr) => {
 }
 
 const sanitizeCalculationData = (arr) => {
-  const validForCalculation = []
+  const forCalculation = []
+  const validOperators = ['+', '-', '*', '/']
 
   for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === null) { validForCalculation.push(0) }
-    else if (arr[i]) { validForCalculation.push(arr[i]) }
+    if (validOperators.includes(arr[i])) { forCalculation.push(arr[i]) }
+    else if (Number(arr[i])) { forCalculation.push(arr[i]) }
+    else if (arr[i] === null) { forCalculation.push(0) }
   }
 
-  return validForCalculation
+  return forCalculation
 }
 
 module.exports = calculate
