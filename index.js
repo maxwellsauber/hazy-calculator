@@ -21,8 +21,8 @@ const sanitizeCalculationData = (arr) => {
 
   for (let i = 0; i < arr.length; i++) {
     if (validOperators.includes(arr[i])) { forCalculation.push(arr[i]) }
-    else if (Number(arr[i])) { forCalculation.push(arr[i]) }
-    else if (arr[i] === null) { forCalculation.push(0) }
+    if (Number(arr[i])) { forCalculation.push(arr[i]) }
+    if (arr[i] === null) { forCalculation.push(0) }
   }
 
   return forCalculation
